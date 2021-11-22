@@ -45,10 +45,6 @@ class StoryList {
    */
 
   static async getStories() {
-    // Note presence of `static` keyword: this indicates that getStories is
-    //  **not** an instance method. Rather, it is a method that is called on the
-    //  class directly. Why doesn't it make sense for getStories to be an
-    //  instance method?
 
     // query the /stories endpoint (no auth required)
     const response = await axios({
@@ -190,7 +186,7 @@ class User {
   }
 
   /** When we already have credentials (token & username) for a user,
-   *   we can log them in automatically. This function does that.
+   *   log them in automatically
    */
 
   static async loginViaStoredCredentials(token, username) {
